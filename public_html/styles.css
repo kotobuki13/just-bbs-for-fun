@@ -1,0 +1,31 @@
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  width: 280px;
+}
+
+input, textarea {
+  margin: 10px 0;
+  font-size: 100%;
+  }  
+
+
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+  background: #668ad8;
+  border-radius: 3px;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
