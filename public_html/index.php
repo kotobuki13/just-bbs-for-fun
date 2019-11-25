@@ -16,7 +16,6 @@ require_once(__DIR__ . '/../config/config.php');
 
 <body>
 
-
   <h1>JUST BBS FOR FUN</h1>
 
   <form action="POST">
