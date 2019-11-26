@@ -19,8 +19,10 @@ require_once(__DIR__ . '/../config/config.php');
   <h1>JUST BBS FOR FUN</h1>
 
   <form action="POST">
-    <input type="text" name="u_name" placeholder="名前（１０文字以内）" size="20">
-    <textarea name="content" placeholder="投稿内容(１５０文字以内)" cols="40" rows="5"></textarea>
+    <span class="inputLabel">名前</span>
+    <input type="text" name="u_name" placeholder="１０字以内" size="20">
+    <span class="inputLabel">投稿内容</span>
+    <textarea name="content" placeholder="１５０字以内" cols="40" rows="5"></textarea>
     <div class="btn">投稿する</div>
   </form>
 
