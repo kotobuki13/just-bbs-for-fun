@@ -1,6 +1,12 @@
 <?php
 
+// トップ画面
+
 require_once(__DIR__ . '/../config/config.php');
+
+$app = new MyApp\Controller\Login();
+
+$app->run();
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +28,7 @@ require_once(__DIR__ . '/../config/config.php');
     <span class="inputLabel">名前</span>
     <input type="text" name="u_name" placeholder="１０字以内" size="20">
     <span class="inputLabel">投稿内容</span>
-    <textarea name="content" placeholder="１５０字以内" cols="40" rows="5"></textarea>
+    <textarea name="content" placeholder="１５０字以内" cols="40" rows="6"></textarea>
     <div class="btn">投稿する</div>
   </form>
 
