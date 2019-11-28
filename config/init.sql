@@ -5,11 +5,12 @@ grant all privileges on bbs_db.* to 'dbuser'@'localhost';
 
 use bbs_db
 
-create table posts (
+create table messages (
   id int not null auto_increment primary key,
-  u_name varchar(10),
-  context varchar(150),
-  created datetime
+  u_name varchar(15) default "匿名希望",
+  content varchar(150),
+  created datetime,
+  modified datetime
 );
 
-desc posts;
+desc messages;

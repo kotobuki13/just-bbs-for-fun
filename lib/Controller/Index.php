@@ -19,7 +19,7 @@ class Index extends \MyApp\Controller
         'content' => $_POST['content']
       ]);
 
-        header("Location " . $_SERVER['PHP_SELF']);
+        header("Location " . SITE_URL);
         exit;
     }
 }

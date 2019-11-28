@@ -1,10 +1,9 @@
 <?php
 
 // トップ画面
-
 require_once(__DIR__ . '/../config/config.php');
 
-$app = new MyApp\Controller\Login();
+$app = new MyApp\Controller\Index();
 
 $app->run();
 
@@ -24,12 +23,12 @@ $app->run();
 
   <h1>JUST BBS FOR FUN</h1>
 
-  <form action="POST">
+  <form method="POST" id="postMessage">
     <span class="inputLabel">名前</span>
     <input type="text" name="u_name" placeholder="１０字以内" size="20">
     <span class="inputLabel">投稿内容</span>
     <textarea name="content" placeholder="１５０字以内" cols="40" rows="6"></textarea>
-    <div class="btn">投稿する</div>
+    <div class="btn" onclick="document.getElementById('postMessage').submit();">投稿する</div>
   </form>
 
 </body>
