@@ -6,6 +6,9 @@ class Index extends \MyApp\Controller
 {
     public function run()
     {
+        $messagesModel = new \MyApp\Model\Message();
+        $this->setValues('messages', $messagesModel->findAllMessage());
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->postMessage();
         }
@@ -19,7 +22,7 @@ class Index extends \MyApp\Controller
         'content' => $_POST['content']
       ]);
 
-        header("Location " . SITE_URL);
+        header('Location: ' . SITE_URL);
         exit;
     }
 }

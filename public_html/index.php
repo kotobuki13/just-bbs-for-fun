@@ -4,7 +4,6 @@
 require_once(__DIR__ . '/../config/config.php');
 
 $app = new MyApp\Controller\Index();
-
 $app->run();
 
 ?>
@@ -23,13 +22,25 @@ $app->run();
 
   <h1>JUST BBS FOR FUN</h1>
 
-  <form method="POST" id="postMessage">
+  <form action="./index.php" method="POST" id="postMessage">
     <span class="inputLabel">名前</span>
     <input type="text" name="u_name" placeholder="１０字以内" size="20">
     <span class="inputLabel">投稿内容</span>
     <textarea name="content" placeholder="１５０字以内" cols="40" rows="6"></textarea>
     <div class="btn" onclick="document.getElementById('postMessage').submit();">投稿する</div>
   </form>
+
+  <h2>Messages</h2>
+  <div class="posts">
+    <ul>
+      <?php foreach ($app->getValues()->messages as $message) : ?>
+      <li>
+        <?= h($message->u_name); ?>: <?= h($message->content); ?>
+        <<?= h($message->created); ?>>
+      </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
 
 </body>
 

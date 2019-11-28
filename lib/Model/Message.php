@@ -12,9 +12,16 @@ class Message extends \MyApp\Model
         if ($values['u_name'] === "") {
             $values['u_name'] = "匿名希望";
         }
-        $res = $stmt->execute([
+        $stmt->execute([
           ':u_name' => $values['u_name'],
           ':content' => $values['content']
         ]);
+    }
+
+    public function findAllMessage()
+    {
+        $stmt = $this->db->query("select * from messages order by id desc");
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, 'stdClass');
+        return $stmt->fetchAll();
     }
 }
