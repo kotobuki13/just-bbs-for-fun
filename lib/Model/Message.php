@@ -18,6 +18,14 @@ class Message extends \MyApp\Model
         ]);
     }
 
+    public function delete($id)
+    {
+        $stmt = $this->db->prepare("delete from messages where id = :id");
+        $stmt->execute([
+            ':id' => $id
+        ]);
+    }
+
     public function findAllMessage()
     {
         $stmt = $this->db->query("select * from messages order by id desc");

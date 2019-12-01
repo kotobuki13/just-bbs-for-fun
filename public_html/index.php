@@ -27,7 +27,7 @@ $app->run();
     <input type="text" name="u_name" placeholder="１０字以内" size="20">
     <span class="inputLabel">投稿内容</span>
     <textarea name="content" placeholder="１５０字以内" cols="40" rows="6"></textarea>
-    <div class="btn" onclick="document.getElementById('postMessage').submit();">投稿する</div>
+    <input type="submit" class="btn" name="add" value="投稿する">
   </form>
 
   <h2>Messages</h2>
@@ -37,6 +37,11 @@ $app->run();
       <li>
         <?= h($message->u_name); ?>: <?= h($message->content); ?>
         <<?= h($message->created); ?>>
+          <form class="buttonToRemove" method="POST">
+            <input type="hidden" name="remove"
+              value="<?= h($message->id); ?>">
+            <input type="submit" value="x">
+          </form>
       </li>
       <?php endforeach; ?>
     </ul>

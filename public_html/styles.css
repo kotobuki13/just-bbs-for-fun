@@ -44,4 +44,7 @@ input, textarea {
 .posts li{
   margin: 20px auto;
 }
+.buttonToRemove{
+  display: inline;
+}
 
