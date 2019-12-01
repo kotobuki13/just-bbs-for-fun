@@ -21,7 +21,7 @@ $app->run();
 <body>
 
   <h1>JUST BBS FOR FUN</h1>
-
+  <!-- 投稿フォーム -->
   <form action="./index.php" method="POST" id="postMessage">
     <span class="inputLabel">名前</span>
     <input type="text" name="u_name" placeholder="１０字以内" size="20">
@@ -31,12 +31,14 @@ $app->run();
   </form>
 
   <h2>Messages</h2>
+  <!-- 投稿一覧 -->
   <div class="posts">
     <ul>
       <?php foreach ($app->getValues()->messages as $message) : ?>
       <li>
         <?= h($message->u_name); ?>: <?= h($message->content); ?>
         <<?= h($message->created); ?>>
+          <!-- 削除ボタン -->
           <form class="buttonToRemove" method="POST">
             <input type="hidden" name="remove"
               value="<?= h($message->id); ?>">
